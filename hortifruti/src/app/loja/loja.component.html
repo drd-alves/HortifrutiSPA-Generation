@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div>
+
+        <h3 class="text-center mb-4 text-monospace">Cadastrar novo produto:</h3>
+        
+        <div class="form-group">
+            <label for="titulo" class="text-monospace">Nome:</label>
+            <input type="text" name="titulo" id="titulo" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="preco" class="text-monospace">Preço:</label>
+            <input type="number" name="preco" id="preco" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="imagem" class="text-monospace">Imagem:</label>
+            <input type="texto" name="imagem" id="imagem" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="qtdEstoque" class="text-monospace">Quantidade em estoque:</label>
+            <input type="number" name="qtdEstoque" id="qtdEstoque" class="form-control">
+        </div>
+    </div> 
+    
+    <hr class="mt-5 mb-5">
+    
+    <h3 class="text-center mb-4 text-monospace">Nossos Produtos</h3>
+    
+    <div class="row d-flex justify-content-center" >
+
+        <div class="card m-2" style="width: 18rem;" *ngFor="let produto of listaProdutos" >
+        
+            <div class="card-body">
+                <img src="{{produto.imagem}}" class="card-img-top" alt="...">
+                <h5 class="card-title">{{produto.nome}}</h5>
+                
+                <p class="text-monospace">Código: {{produto.id}}</p>
+                <p class="text-monospace">Preço: R{{produto.preco | currency}}</p>
+                <p class="text-monospace">Quantidade em estoque: {{produto.qtdEstoque}}</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
